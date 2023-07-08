@@ -1,0 +1,100 @@
+************** Himanshu Gaurav *****************
+
+1.For running the kafka server:-
+
+zookeeper-server-start .\config\zookeeper.properties
+
+kafka-server-start .\config\server.properties
+
+-----------------------------------------------------------------------
+2.json payload for adding the movie:-
+
+{
+  "movieName": "spider",
+  "theatreName": "PVR",
+  "noOfTicketsAvailable": 104,
+  "ticketsStatus": "Book ASAP"
+}
+
+----------------------------------------------------------------------
+3.To run the swagger
+
+http://localhost:8080/swagger-ui/index.html
+
+http://localhost:8080/v3/api-docs
+
+http://localhost:8080/v2/api-docs
+----------------------------------------------------------------------
+4.kafka------
+
+
+1.to show the topics
+  kafka-topics.bat --bootstrap-server localhost:9092 --list
+
+2.Here's an example command to consume messages from the "movieapptopic" topic:
+  kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic movieapptopic --from-beginning
+
+3.Delete Topic: To delete a topic, you can use the following command:
+kafka-topics.bat --bootstrap-server localhost:9092 --delete --topic movieapptopic
+
+4.Console Producer: To manually produce messages to a Kafka topic from the console, you can use the following command:
+
+ans- kafka-console-producer.bat --broker-list localhost:9092 --topic movieapptopic
+
+5.Describe Topic: To get detailed information about a specific topic, you can use the following command:
+
+ans- kafka-topics.bat --bootstrap-server localhost:9092 --describe --topic movieapptopic
+
+--------------------------------------------------------------------
+5.to insert the movie in mongodb via cmd
+moviebooking> db.movie.insertOne({
+      movieName: "Matrix", 
+     theatreName: "WXYZ Theatre",
+     noOfTicketsAvailable: 1000
+    })
+output--
+{
+  acknowledged: true,
+  insertedId: ObjectId("6490b40a2ded0f5823ae9c94")
+}
+------------------------------------------------------------------------
+6.to find the movie in mongodb via cmd
+
+moviebooking> db.movies.find({ movieName: "The Matrix", theatreName: "WXYZ Theatre" })
+[
+  {
+    _id: ObjectId("6490b40a2ded0f5823ae9c94"),
+    movieName: 'The Matrix',
+    theatreName: 'WXYZ Theatre',
+    noOfTicketsAvailable: 1000
+  }
+]
+
+-----------------------------------------------------------------------
+7.json payload for adding the movie in mongodb
+{
+  "movieName": "spider1",
+  "theatreName": "PVR1",
+  "noOfTicketsAvailable": 3,
+  "ticketsStatus": "Book ASAP",
+}
+-----------------------------------------------------------------------
+8.For angular
+
+a.1st update the angular/cli in cmd
+ npm install -g @angular/cli@latest
+
+b.if it's already updated
+  npm install -g @angular/cli@13.2.0  (take the latest update version)
+
+c.run this one
+  npm install
+
+d.then run this
+  ng s -o
+
+e.if it has dependency problems then run this
+
+    npm i @angular/material  (for adding the angular material)
+  
+    npm i sweetalert2        (for adding the sweetalert2)

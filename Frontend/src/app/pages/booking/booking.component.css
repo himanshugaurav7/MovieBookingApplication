@@ -1,0 +1,15 @@
+.full-width{
+    width: 100%;
+}
+.green {
+    background-color: green;
+}
+label {
+    width: 35px;
+    height: 35px;
+    /* border: 1px solid #000; */
+    border-radius: 50%;
+    cursor: pointer;
+    display: block;
+    padding: auto;;
+  }

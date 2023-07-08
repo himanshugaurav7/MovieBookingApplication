@@ -1,0 +1,561 @@
+{
+	"info": {
+		"_postman_id": "2f775c82-0ba2-4df1-b410-16b314fb26f4",
+		"name": "MovieApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register admin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"loginId\": \"admin\",\n  \"firstName\": \"admin\",\n  \"lastName\": \"A\",\n  \"email\": \"admin@gmail.com\",\n  \"contactNumber\": 1234567890,\n  \"roles\":\"admin\",\n  \"password\": \"password\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1.0/moviebooking/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1.0",
+						"moviebooking",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"loginId\": \"user\",\n  \"firstName\": \"user\",\n  \"lastName\": \"A\",\n  \"email\": \"user1@gmail.com\",\n  \"contactNumber\": 1234567890,\n  \"roles\":\"user\",\n  \"password\": \"password\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1.0/moviebooking/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1.0",
+						"moviebooking",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"loginId\": \"user\",\n  \"password\": \"password\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1.0/moviebooking/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1.0",
+						"moviebooking",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login admin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"loginId\": \"admin\",\n  \"password\": \"password\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1.0/moviebooking/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1.0",
+						"moviebooking",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateMovietickets admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjEiLCJpYXQiOjE2ODgxMTMyNTcsImV4cCI6MTY4ODE5OTY1N30.6xzDb7mSJvttCOZ_dH5pHrFpnpLHqV-YzXFuFHlpS32heiX7eug306l8b6jWCHu9b7UJQGUyVmzXvaHN3iuqGg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{tokenA}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"get_id\": {\n    \"timestamp\": 1687270289,\n    \"date\": \"2023-06-20T14:11:29.000+00:00\"\n  },\n  \"movieName\": \"spider\",\n  \"theatreName\": \"PVR\",\n  \"noOfTicketsAvailable\": 0,\n  \"ticketsStatus\": \"SOLD OUT\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1.0/moviebooking/SpiderMan/update/649e90ca4e5cb90cb7bc3782",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1.0",
+						"moviebooking",
+						"SpiderMan",
+						"update",
+						"649e90ca4e5cb90cb7bc3782"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reset password admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjIiLCJpYXQiOjE2ODgxMTEyMDUsImV4cCI6MTY4ODE5NzYwNX0.ndyd-jxXpyHL6sn81_dNMxQN1p4VRwCvBpIYz1op7dyVnNldNRXOqKGhCe550ZkJZnufpS-iFphR4FO9O-fI3w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"loginId\": \"admin1\",\n  \"password\": \"password1\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1.0/moviebooking/admin2/forgot",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1.0",
+						"moviebooking",
+						"admin2",
+						"forgot"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reset password user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlhdCI6MTY4ODExMTIwMCwiZXhwIjoxNjg4MTk3NjAwfQ.HeeQMOYfvxCaIT3mg2YdCND9kAHMu6ZAu8ery40rGjzS5omgW-dIEWbLmDIlOHzAKNsqMmo-GGHtgcVHjpuzKg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"loginId\": \"user1\",\n  \"password\": \"password1\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1.0/moviebooking/user1/forgot",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1.0",
+						"moviebooking",
+						"user1",
+						"forgot"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Book Ticket user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiaWF0IjoxNjg4ODExNzQ5LCJleHAiOjE2ODg4OTgxNDl9.XVXQl_jVPkAU1_xao7f4jS__ctCZnSpNOq9J0HeLqHA3jT_i23K5YxtIywYPjH2aPIttjvALIrXy7-l1eavy9g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"loginId\": \"user\",\n  \"movieName\": \"SpiderMan\",\n  \"theatreName\": \"PVR\",\n  \"noOfTickets\": 1,\n  \"seatNumber\": [\n    \"a1\"\n  ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1.0/moviebooking/SpiderMan/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1.0",
+						"moviebooking",
+						"SpiderMan",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Movie",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1.0/moviebooking/movies/search/SpiderMan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1.0",
+						"moviebooking",
+						"movies",
+						"search",
+						"SpiderMan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllBookedTickets admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4ODgxMTc1OCwiZXhwIjoxNjg4ODk4MTU4fQ.4J5m7xi96t-ICVo7RtSWr1W47cIgxpnRshQTmB-J31yhruliLO7SfiFoNb4V-DRJevKE_Phi6iUYwqQAthztDA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{tokenA}}"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1.0/moviebooking/getallbookedtickets/SpiderMan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1.0",
+						"moviebooking",
+						"getallbookedtickets",
+						"SpiderMan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search all Movies",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{tokenA}}",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1.0/moviebooking/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1.0",
+						"moviebooking",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Movie admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4ODgxMTc1OCwiZXhwIjoxNjg4ODk4MTU4fQ.4J5m7xi96t-ICVo7RtSWr1W47cIgxpnRshQTmB-J31yhruliLO7SfiFoNb4V-DRJevKE_Phi6iUYwqQAthztDA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{tokenA}}"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1.0/moviebooking/SpiderMan/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1.0",
+						"moviebooking",
+						"SpiderMan",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add movie admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4ODgxMTc1OCwiZXhwIjoxNjg4ODk4MTU4fQ.4J5m7xi96t-ICVo7RtSWr1W47cIgxpnRshQTmB-J31yhruliLO7SfiFoNb4V-DRJevKE_Phi6iUYwqQAthztDA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"movieName\": \"SpiderMan\",\r\n  \"theatreName\": \"PVR\",\r\n  \"noOfTicketsAvailable\": 3,\r\n  \"ticketsStatus\": \"Book ASAP\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1.0/moviebooking/addmovie",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1.0",
+						"moviebooking",
+						"addmovie"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "swagger api test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v3/api-docs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v3",
+						"api-docs"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

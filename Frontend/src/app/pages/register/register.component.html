@@ -1,0 +1,98 @@
+<app-navbar></app-navbar>
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row" style="margin-top: 30px;">
+            <div class="col-md-6 offset-md-3">
+                <mat-card style="background-color: rgb(241, 239, 232);">
+                    <mat-card-content>
+                        <h1 class="text-center" style="font-family: Copperplate Gothic Light;">Get Started with Registration</h1>
+                        <form (ngSubmit)="formSubmit()">
+                            <!-- username -->
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Username</mat-label>
+                                <input 
+                                required
+                                [(ngModel)] ="user.loginId"
+                                name="username"
+                                matInput placeholder="Enter Here">
+                            </mat-form-field>
+                            <!-- first name -->
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>First Name</mat-label>
+                                <input 
+                                required
+                                [(ngModel)]="user.firstName"
+                                name="firstName"
+                                matInput placeholder="Enter Here">
+                            </mat-form-field>
+                            <!-- last name -->
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Last Name</mat-label>
+                                <input 
+                                required
+                                [(ngModel)]="user.lastName"
+                                name="lastName"
+                                matInput placeholder="Enter Here">
+                            </mat-form-field>
+                            <!-- role -->
+                            <br>
+                            <label>   Select Role   </label>
+                            <br>
+                            <mat-radio-group class = "tp-radio-group" [(ngModel)] = "user.roles" ngDefaultControl name="user.roleset">
+                                <mat-radio-button class = "tp-radio-button"
+                                   *ngFor = "let role of user.roleset" [value] = "role">
+                                   {{role}}
+                                </mat-radio-button>
+                             </mat-radio-group> 
+                                  <!-- email -->
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>E mail</mat-label>
+                                <input 
+                                required
+                                [(ngModel)]="user.email"
+                                name="email"
+                                type="email" matInput placeholder="Enter E-Mail">
+                            </mat-form-field>
+                            <!-- contact Number -->
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Contact Number</mat-label>
+                                <input 
+                                required
+                                [(ngModel)]="user.contactNumber"
+                                name="contactNumber"
+                                type="number" minlength="10" matInput placeholder="Enter Number">
+                            </mat-form-field>
+                            <!-- password -->
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Password</mat-label>
+                                <input 
+                                required
+                                [(ngModel)]="user.password"
+                                name="password"
+                                type="password" minlength="6" matInput placeholder="Enter Password">
+                            </mat-form-field>
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Confirm Password</mat-label>
+                                <input 
+                                required
+                                [(ngModel)]="user.confirmPassword"
+                                name="confirmPassword"
+                                type="password" minlength="6" matInput placeholder="Enter Confirm Password">
+                            </mat-form-field>
+                            <div class="container text-center">
+                                <button type="submit" style="margin-right: 10%;" mat-raised-button color="primary">Register</button>
+                                <button type="reset" style="margin-left: 10%;" mat-raised-button color="accent">Reset</button>
+                                
+                            </div>
+                            <br>
+                            <div style="text-align: center;">
+                                If Already User then ... 
+                                <a href="api/v1.0/moviebooking/login" >Login</a>
+                            </div>
+                        </form>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

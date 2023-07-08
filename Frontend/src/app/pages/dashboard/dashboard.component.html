@@ -1,0 +1,94 @@
+<app-navbar></app-navbar>
+<h1 style="text-align: center;" class="font-style">Admin Dashboard</h1>
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row" style="margin-top: 30px;">
+            <div class="col-md-6 offset-md-3">
+                <mat-card style="background-color: rgb(241, 239, 232);">
+                    <mat-card-content>
+                        <h1 class="text-center">Delete Movie</h1>
+                        <form (ngSubmit)="onSubmitDelete()">
+                            <!-- username -->
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Enter Movie Name</mat-label>
+                                <input 
+                                required
+                                [(ngModel)] ="deleteMovieName"
+                                name="deleteMovieName"
+                                matInput placeholder="Enter movie Here">
+                            </mat-form-field>
+                            <div class="container text-center">
+                                <button type="submit" style="margin-right: 10px;" mat-raised-button color="primary">Delete</button>
+                            </div>
+                        </form>
+                    </mat-card-content>
+                </mat-card>
+                <br>
+                <mat-card style="background-color: rgb(241, 239, 232);">
+                    <mat-card-content>
+                        <h1 class="text-center">Update Ticket Status</h1>
+                        <form (ngSubmit)="onSubmitUpdate()">
+                            <!-- movie name to delete movie -->
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Enter Movie Name</mat-label>
+                                <input 
+                                required
+                                [(ngModel)] ="movieName"
+                                name="movieName"
+                                matInput placeholder="Enter movie Here">
+                            </mat-form-field>
+                            <div class="container text-center">
+                                <button type="submit" style="margin-right: 10px;" mat-raised-button color="primary">Update</button>
+                            </div>
+                        </form>
+                    </mat-card-content>
+                </mat-card>
+                <br>
+                <mat-card style="background-color: rgb(241, 239, 232);">
+                    <mat-card-content>
+                        <h1 class="text-center">Get Booked Tickets</h1>
+                        <form (ngSubmit)="onSubmitViewTickets()">
+                            <!-- movie nasme to delete movie -->
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Enter Movie Name</mat-label>
+                                <input 
+                                required
+                                [(ngModel)] ="movieNameTicket"
+                                name="movieNameTicket"
+                                matInput placeholder="Enter movie Here">
+                            </mat-form-field>
+                            <div class="container text-center">
+                                <button type="submit" style="margin-right: 10px;" mat-raised-button color="primary">Get Bookings</button>
+                                <button (click)="reset()" type="reset" mat-raised-button color="primary">Clear</button>
+                            </div>
+                        </form>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<table *ngIf="movieNameTicket != '' || movieNameTicket == undefined" style="padding-top: 15px; width: 100%;font-size: 20px;border: 5px;" class="mat-elevation-z8">
+    <tr style="border: 20px;">
+        <td><h2>No.</h2></td>
+        <td><h2>Username</h2></td>
+        <td><h2>Movie Name</h2></td>
+        <td><h2>Theater Name</h2></td>
+        <td><h2>No Of Tickets</h2></td>
+        <td><h2>Seats</h2></td>
+    </tr>
+    <span></span>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr *ngFor="let arr of tickets">
+        <td class="font-style">{{arr.position}}</td>
+        <td class="font-style">{{arr.loginId}}</td>
+        <td class="font-style">{{arr.movieName}}</td>
+        <td class="font-style">{{arr.theaterName}}</td>
+        <td class="font-style">{{arr.noOfTickets}}</td>
+        <td class="font-style">{{arr.seatNumber}}</td>
+    </tr>
+</table>
+<br>

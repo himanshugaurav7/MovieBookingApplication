@@ -1,0 +1,3 @@
+com\moviebookingapp\security\services\MovieServiceTest.class
+com\moviebookingapp\controller\MovieAppControllerTest.class
+com\moviebookingapp\MovieappApplicationTests.class
